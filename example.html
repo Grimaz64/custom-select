@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html lang="en" class="lt-ie10 lt-ie9 lt-ie8 lt-ie7 ie6 "> <![endif]-->
+<!--[if IE 7]>         <html lang="en" class="lt-ie10 lt-ie9 lt-ie8 ie7"> <![endif]-->
+<!--[if IE 8]>         <html lang="en" class="lt-ie10 lt-ie9 ie8"> <![endif]-->
+<!--[if IE 9]>         <html lang="en" class="lt-ie10 ie9"> <![endif]-->
+<!--[if gt IE 9]><!--> <html lang="en" class=""> <!--<![endif]-->
+<head>
+	<meta charset="utf-8" />
+
+	<title>EXAMPLE CUSTOM SELECT</title>
+	<meta name="description" content="EXAMPLE CUSTOM SELECT" />
+	<meta name="viewport" content="initial-scale=1, maximum-scale=1" />
+
+	<link rel="stylesheet" href="jquery.customselect.css" />
+
+	<style>
+
+		html, body {
+			width: 100%;
+			margin: 0;
+		}
+
+		html{ height: 100%; overflow-y: scroll; }
+		body{ overflow: hidden;}
+
+		#container {
+			padding: 50px;
+		}
+
+		.with-fixwidth .bang-select-wrapper {
+			width: 125px;
+		}
+		.with-fixwidth .bang-select-input {
+			width: 100%;
+		}
+
+		/* JSCROLL */
+		.jscroll-scrollbar {
+		    position: absolute;
+		    background: none;
+		    display: none;
+		    cursor: pointer;
+		    z-index: 65;
+		}
+		.jscroll-scrollbar.vertical {
+		    width: 6px;
+		    height: 100%;
+		    top: 0;
+		    left: 100%;
+		    margin-left: -6px;
+		    margin-top: 0px;
+		}
+		.jscroll-handler {
+		    background: #000;
+		    position: absolute;
+		    top: 0;
+		    left: 0;
+		}
+		.jscroll-scrollbar.vertical .jscroll-handler {
+		    width: 6px;
+		    height: 50px;
+		}
+
+	</style>
+</head>
+<body>
+
+	<div id="container">
+
+		<h2>BASE NATIVE SELECT</h2>
+		<select name="myselect" style="margin-right: 50px;">
+			<option value="1">Lorem</option>
+			<option value="2">ipsum dolor</option>
+			<option value="3">sit amet</option>
+			<option value="4">consectetur</option>
+			<option value="5">adipisicing</option>
+		</select>
+
+		<h2>BASE CUSTOM SELECT</h2>
+		<select name="myselectcustom" class="custom_select" id="first-custom-select">
+			<option value="1">Lorem</option>
+			<option value="2">ipsum dolor</option>
+			<option value="3">sit amet</option>
+			<option value="4">consectetur</option>
+			<option value="5">adipisicing</option>
+		</select>
+
+		<h2>SCROLLABLE NATIVE SELECT</h2>
+		<select id="control" name="myselectcustom" style="margin-right: 50px;">
+			<option value="1">Lorem</option>
+			<option value="2">ipsum dolor consectetur</option>
+			<option value="3">sit amet</option>
+			<option value="4">consectetur</option>
+			<option value="5">adipisicing</option>
+			<option value="6">Lorem</option>
+			<option value="7">ipsum dolor</option>
+			<option value="8">sit amet</option>
+			<option value="9">consectetur</option>
+			<option value="10">adipisicing</option>
+			<option value="11">Lorem</option>
+			<option value="12">ipsum dolor</option>
+			<option value="13">sit amet</option>
+			<option value="14">consectetur</option>
+			<option value="15">adipisicing</option>
+			<option value="16">Lorem</option>
+			<option value="17">ipsum dolor</option>
+			<option value="18">sit amet</option>
+			<option value="19">consectetur</option>
+			<option value="20">adipisicing</option>
+			<option value="21">adipisicing</option>
+		</select>
+
+		<h2>SCROLLABLE STRECHED CUSTOM SELECT</h2>
+		<select name="myselectcustom" class="custom_select change_select">
+			<option value="1">Lorem</option>
+			<option value="2">ipsum dolor consectetur</option>
+			<option value="3">sit amet</option>
+			<option value="4">consectetur</option>
+			<option value="5">adipisicing</option>
+			<option value="6">Lorem</option>
+			<option value="7">ipsum dolor</option>
+			<option value="8">sit amet</option>
+			<option value="9">consectetur</option>
+			<option value="10">adipisicing</option>
+			<option value="11">Lorem</option>
+			<option value="12">ipsum dolor</option>
+			<option value="13">sit amet</option>
+			<option value="14">consectetur</option>
+			<option value="15">adipisicing</option>
+			<option value="16">Lorem</option>
+			<option value="17">ipsum dolor</option>
+			<option value="18">sit amet</option>
+			<option value="19">consectetur</option>
+			<option value="20">adipisicing</option>
+			<option value="21">adipisicing</option>
+		</select>
+
+		<h2>SCROLLABLE MULTILINE FIXED WIDTH CUSTOM SELECT</h2>
+		<span class="with-fixwidth">
+			<select name="myselectcustom" class="custom_select2 change_select">
+				<option value="1">Lorem</option>
+				<option value="2">ipsum dolor consectetur</option>
+				<option value="3">sit amet</option>
+				<option value="4">consectetur</option>
+				<option value="5">adipisicing</option>
+				<option value="6">éléphant rose</option>
+				<option value="7">ipsum dolor</option>
+				<option value="8">sit amet</option>
+				<option value="9">consectetur</option>
+				<option value="10">adipisicing</option>
+				<option value="11">Lorem</option>
+				<option value="12">ipsum dolor</option>
+				<option value="13">sit amet</option>
+				<option value="14">consectetur</option>
+				<option value="15">adipisicing</option>
+				<option value="16">Lorem</option>
+				<option value="17">ipsum dolor</option>
+				<option value="18">sit amet</option>
+				<option value="19">consectetur</option>
+				<option value="20">adipisicing</option>
+				<option value="21">adipisicing</option>
+			</select>
+		</span>
+
+		<h2>CUSTOM SCROLL CUSTOM SELECT</h2>
+		<select name="myselectcustom" class="custom_select3">
+			<option value="1">Lorem</option>
+			<option value="2">ipsum dolor consectetur</option>
+			<option value="3">sit amet</option>
+			<option value="4">consectetur</option>
+			<option value="5">adipisicing</option>
+			<option value="6">Lorem</option>
+			<option value="7">ipsum dolor</option>
+			<option value="8">sit amet</option>
+			<option value="9">consectetur</option>
+			<option value="10">adipisicing</option>
+			<option value="11">Lorem</option>
+			<option value="12">ipsum dolor</option>
+			<option value="13">sit amet</option>
+			<option value="14">consectetur</option>
+			<option value="15">adipisicing</option>
+			<option value="16">Lorem</option>
+			<option value="17">ipsum dolor</option>
+			<option value="18">sit amet</option>
+			<option value="19">consectetur</option>
+			<option value="20">adipisicing</option>
+			<option value="21">adipisicing</option>
+		</select>
+
+	</div>
+
+	<a href="#" id="change">MAJ LIST BASE CUSTOM SELECT</a>
+
+	<script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
+	<script src="vendor/jscroll.js"></script>
+	<script src="jquery.customselect.js"></script>
+	<script>
+		$(document).ready(function() {
+
+			// Normal
+			$('.custom_select').customSelect();
+
+			// With fix-width : width of the list = width of the select
+			$('.custom_select2').customSelect({ fixwidth: true, listClass: "custom-list-class" });
+
+			// To change the value of the custom select
+			$('#control').on('change', function() {
+				var value = $(this).val();
+
+				// Option 1: you change the value of the original select and you add trigger('change')
+				$('.change_select').val(value).trigger('change');
+
+				//Option 2: you use the API of the plugin
+				/*$('.change_select').each(function() {
+					$(this).data('customselect').setVal(value);
+				});*/
+
+			});
+
+			// With custom scrollbar (example using jscroll from Nicolas Riciotti)
+			$('.custom_select3').customSelect({ rescroll: false }); // on désactive le scroll natif
+
+			$('.custom_select3').on('displayList', function(e, $skinnedList, maxHeight) {
+				$skinnedList.css('height', 'auto');
+				$skinnedList.css('height', Math.min($skinnedList.height(), maxHeight) + 'px');
+				$skinnedList.data('jscroll').refresh();
+			});
+
+			$('.custom_select3').on('scrollToSelected', function(e, $skinnedList, $selectedOption) {
+				$skinnedList.data('jscroll').scrollTo(0, Math.min($selectedOption.position().top, $skinnedList.find('ul').height()-$skinnedList.height()), 100);
+			});
+
+			$('.bang-select-list').last().each(function() { /* .last() to select only the .custom_select3 box */
+				if (typeof ($(this).data('jscroll')) == 'undefined') {
+					$(this).data('jscroll', new JScroll(this, {mousedrag: false, propagation: false}, function() {}));
+				}
+			});
+
+			$('#change').on('click', function(e) {
+				e.preventDefault();
+
+				$('#first-custom-select').html('<option value="1b">MAJ Lorem</option><option value="2b">MAJ ipsum dolor</option><option value="3b">MAJ sit amet</option><option value="4b">MAJ consectetur</option><option value="5b">MAJ adipisicing</option>');
+				$('#first-custom-select').data('customselect').refresh();
+
+			});
+
+		});
+	</script>
+</body>
+</html>

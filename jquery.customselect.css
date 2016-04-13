@@ -1,0 +1,119 @@
+.bang-select-wrapper {
+    position: relative;
+    display: inline-block;
+    *display: inline;
+    zoom: 1;
+}
+.bang-select-wrapper select {
+    position: absolute;
+    clip: rect(0,0,0,0);
+}
+
+.bang-select-input {
+    position: relative;
+    top: 0;
+    left: 0;
+    padding-left: 6px;
+    padding-right: 25px;
+    background: #ffffff url('../img/select-arrow.png') no-repeat right top;
+    border: 1px solid #cbcbcb;
+    cursor: default;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -o-user-select: none;
+    user-select: none;
+    height: 25px;
+    line-height: 25px;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    overflow: hidden;
+    display: inline-block;
+    *display: inline;
+    zoom: 1;
+    font-size: 16px;
+	font-weight: 400;
+    /*width: 100%;*/
+}
+@media screen and (-webkit-min-device-pixel-ratio: 2), (min--moz-device-pixel-ratio: 2), (min-device-pixel-ratio: 2), (min-resolution: 2dppx), (min-resolution: 192dpi) {
+    .bang-select-input {
+        background-image: url('../img/select-arrow@2x.png');
+        background-size: 17px 69px;
+    }
+}
+.bang-select-input:hover {
+	border-color: #3c7fb1;
+    background-position: right center;
+}
+.bang-select-wrapper select:focus + .bang-select-input {
+	outline: black dotted 1px;
+}
+.bang-select-input.focus {
+	border-color: #3c7fb1;
+    background-position: right center;
+}
+.bang-select-input.active {
+	border-color: #3c7fb1;
+    background-position: right bottom !important;
+}
+
+.bang-select-list {
+    visibility: hidden;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: auto;
+    border: 1px solid #000000;
+    border-top: 1px solid #b2b2b2;
+    border-left: 2px solid #b2b2b2;
+    background: #fff;
+    text-align: left;
+    outline: 0;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    overflow-y: auto;
+    overflow-x: hidden;
+    /*max-height: 280px;*/
+    z-index: 10000;
+    font-size: 16px;
+	font-weight: 400;
+}
+.bang-select-list.opened {
+	visibility: visible;
+}
+
+.bang-select-list ul,
+.bang-select-list li {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+}
+.bang-select-list .bang-option {
+    padding: 0 22px 0 3px;
+    line-height: 23px;
+    cursor: default;
+    /*height: 23px;*/
+    white-space: nowrap;
+}
+.bang-select-list .bang-option:hover {
+    background: #316ac5;
+    color: #ffffff;
+}
+.bang-select-list .bang-option.active {
+    background: #316ac5;
+    color: #ffffff;
+}
+
+.bang-select-list .bang-optgroup {
+    font-style: italic;
+    font-weight: bold;
+    font-size: 16px;
+    line-height: 23px;
+    height: 23px;
+    cursor: default;
+}
+.bang-select-list .bang-option-ingroup {
+    padding-left: 20px;
+}
